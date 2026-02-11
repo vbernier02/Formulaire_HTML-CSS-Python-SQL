@@ -50,6 +50,7 @@ pip install Flask
 | Client           | JavaScript |
 | Interface        | HTML / CSS |
 | Base de données  | SQLite3    |
+| Framework        | Flask      |
 
 ---
 
