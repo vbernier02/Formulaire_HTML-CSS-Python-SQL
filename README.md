@@ -26,7 +26,7 @@ Execution
 - Ouvir sur un navigateur une page a l'adresse : http://localhost:5000/
 
 Test
--Pour utiliser le formulaire, il est nécessaire de créer un profil au préalable avec le bouton créer un compte.
+- Pour utiliser le formulaire, il est nécessaire de créer un profil au préalable avec le bouton créer un compte.
 Un compte de test est pré a l'emploi est disponible :
   - utilisateur  : `test`
   - mot de passe : `test`
