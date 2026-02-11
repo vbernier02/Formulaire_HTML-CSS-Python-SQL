@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'identification sécurisé</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <img src= "{{ url_for('static', filename='logop8.png') }}" alt="Logo" class="logo">
+        </div>
+
+        <div class="formulaire_container">
+            <div id="loginFormulaire" class="formulaire_section active">
+                <h2>Connexion avec un compte</h2>
+                <form id="loginFormulaireElement">
+                    <div class="formulaire_groupe">
+                        <label for="loginUsername">Identifiant</label>
+                        <input type="text" id="loginUsername" name="username" maxlength="15" required>
+                    </div>
+                    <div class="formulaire_groupe">
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword" name="password" maxlength="15" required>
+                    </div>
+                    <div class="message" id="loginMessage"></div>
+                    <div class="button_groupe">
+                        <button type="submit" class="button button_style">Connexion</button>
+                    </div>
+                </form>
+
+                <div class="separator">
+                    <span>ou</span>
+                </div>
+
+                <div class="button_groupe">
+                    <button type="button" class="button button_style" onclick="showSignup()">Créer un compte</button>
+                    <button type="button" class="button button_style" onclick="resetFormulaire()">Reset</button>
+                </div>
+            </div>
+
+            <div id="signupFormulaire" class="formulaire_section">
+                <h2>Nouveau compte</h2>
+                <form id="signupFormulaireElement">
+                    <div class="formulaire_groupe">
+                        <label for="signupUsername">Identifiant</label>
+                        <input type="text" id="signupUsername" name="username" maxlength="15" required>
+                    </div>
+                    <div class="formulaire_groupe">
+                        <label for="signupPassword">Mot de passe</label>
+                        <input type="password" id="signupPassword" name="password" maxlength="15" required>
+                    </div>
+                    <div class="formulaire_groupe">
+                        <label for="signupConfirmPassword">Confirmer le mot de passe</label>
+                        <input type="password" id="signupConfirmPassword" name="confirm_password" maxlength="15" required>
+                    </div>
+                    <div class="message" id="signupMessage"></div>
+                    <div class="button_groupe">
+                        <button type="submit" class="button button_style">Créer le compte</button>
+                        <button type="button" class="button button_style" onclick="showLogin()">Retour</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
