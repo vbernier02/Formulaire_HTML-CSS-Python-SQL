@@ -32,16 +32,12 @@ Un compte de test est pré a l'emploi est disponible :
   - mot de passe : `test`
 
 --Implémentation--
+
 L'application affiche un formulaire d'identification avec les éléments suivantes :
 
 Fenêtre Principale avec :
 - Un premier champ pour un "Identifiant"
-      - On autoriser :
-            - lettres (a-z, A-Z)
-            - chiffres (0-9)
-            - underscore
-            - entre 3 et 15 caractères
-
+- On autoriser : lettres (a-z, A-Z), chiffres (0-9), underscore, entre 3 et 15 caractères
 - Un second champ pour un "mot de passe"
 - 3 boutons :
       - bouton "connexion" pour vérifier les informations
