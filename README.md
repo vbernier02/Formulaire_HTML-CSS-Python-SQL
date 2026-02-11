@@ -1,59 +1,125 @@
-TP : Formulaire d'Identification Sécurisé
+# TP – Formulaire d’Identification Sécurisé
 
-Auteur: Vincent BERNIER
+**Auteur : Vincent BERNIER**
 
---Informations Techniques--
+---
 
-Prérequis
-- python/python3
+## Description
+
+Application web permettant la création et la connexion sécurisée d’utilisateurs via un formulaire d’identification.
+
+Le projet met en œuvre :
+- Un backend en **Python**
+- Une base de données **SQLite3**
+- Une interface client en **HTML, CSS et JavaScript**
+- Un système de hachage sécurisé des mots de passe avec **bcrypt**
+
+---
+
+## Informations Techniques
+
+### Prérequis
+
+- Python 3
 - SQLite3
 
-Dépendances
-- sqlite3
-- bcrypt
-- os
-- re
+### Dépendances Python
 
-Technologie
-- Serveur backend : python
-- Serveur client : javascript
-- Interface Graphique : HTML et CSS
-- Base de données : SQLite3
+- `sqlite3`
+- `bcrypt`
+- `os`
+- `re`
 
---Utilisation--
+Installation de bcrypt si nécessaire :
 
-Execution
-- python3 formulaire.py
-- Ouvir sur un navigateur une page a l'adresse : http://localhost:5000/
+```bash
+pip install bcrypt
+```
 
-Test
-- Pour utiliser le formulaire, il est nécessaire de créer un profil au préalable avec le bouton créer un compte.
-Un compte de test est pré a l'emploi est disponible :
-  - utilisateur  : `test`
-  - mot de passe : `test`
+---
 
---Implémentation--
+## Technologies Utilisées
 
-L'application affiche un formulaire d'identification avec les éléments suivantes :
+| Composant        | Technologie |
+|------------------|------------|
+| Backend          | Python     |
+| Client           | JavaScript |
+| Interface        | HTML / CSS |
+| Base de données  | SQLite3    |
 
-Fenêtre Principale avec :
-- Un premier champ pour un "Identifiant"
-- On autoriser : lettres (a-z, A-Z), chiffres (0-9), underscore, entre 3 et 15 caractères
-- Un second champ pour un "mot de passe"
-- 3 boutons : un bouton "connexion" pour vérifier les informations, un bouton "Créer un compte" ouvrir une fenêtre d'inscription et unbouton "Reset" qui vide tous les champs du formulaire
+---
 
-Fenêtre d'inscription avec :
-- Un premier champ pour un "Identifiant"
-- Un second champ pour un "mot de passe"
-- Un troisième champ pour la confirmation du mot de passe
-- 2 boutons : un bouton "créer le compte" pour créer un profils identifiant/mot de passe une fois tout les champs correctement remplie et un bouton "retour" pour fermer la fenêtre d'inscription 
+## Utilisation
 
-Gestion de base de données avec SQLite
-- Création d'un fichier data_user.db même répertoire que le code source
-- Le fichier contient une table "users" avec les colonnes suivantes : "id" un identifiant unique, "username" l'identifiant choisie par l'utilisateur et "password_hash" le mot de passe choisie par l'utilisateur haché en SHA-256
+### Lancer l’application
 
---Sécurité--
-- Les mots de passe sont hachés avec bcrypt
-- Les mots de passe ne s'affichent pas à l'écran
-- Prévention des injections SQL avec les requêtes SQLite utilisent des paramètres (`?`) et des context managers (`with sqlite3.connect(...)`).
-- Regex simple
+```bash
+python3 formulaire.py
+```
+
+Puis ouvrir dans un navigateur :
+
+```
+http://localhost:5000/
+```
+
+---
+
+## Compte de Test
+
+Un compte est déjà disponible :
+
+- **Utilisateur** : `test`
+- **Mot de passe** : `test`
+
+---
+
+## Fonctionnalités
+
+### Fenêtre Principale
+
+- Champ **Identifiant**
+  - Autorise : lettres (a-z, A-Z), chiffres (0-9), underscore
+  - Longueur : entre 3 et 15 caractères
+- Champ **Mot de passe**
+- Boutons :
+  - `Connexion`
+  - `Créer un compte`
+  - `Reset` (vide les champs)
+
+---
+
+### Fenêtre d’Inscription
+
+- Champ **Identifiant**
+- Champ **Mot de passe**
+- Champ **Confirmation du mot de passe**
+- Boutons :
+  - `Créer le compte`
+  - `Retour`
+
+---
+
+## Gestion de la Base de Données
+
+- Création automatique du fichier :  
+  `data_user.db`
+- Base SQLite contenant une table `users`
+
+### Structure de la table `users`
+
+| Colonne        | Description |
+|---------------|-------------|
+| id            | Identifiant unique |
+| username      | Identifiant utilisateur |
+| password_hash | Mot de passe haché |
+
+---
+## Sécurité
+
+- Hachage des mots de passe avec **bcrypt**
+- Les mots de passe ne s’affichent pas à l’écran
+- Protection contre les injections SQL :
+  - Requêtes paramétrées (`?`)
+  - Utilisation de `with sqlite3.connect(...)`
+  - Validation des identifiants via **Regex**
