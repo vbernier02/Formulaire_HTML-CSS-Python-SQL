@@ -1,4 +1,5 @@
 TP : Formulaire d'Identification Sécurisé
+
 Auteur: Vincent BERNIER
 
 --Informations Techniques--
@@ -39,25 +40,17 @@ Fenêtre Principale avec :
 - Un premier champ pour un "Identifiant"
 - On autoriser : lettres (a-z, A-Z), chiffres (0-9), underscore, entre 3 et 15 caractères
 - Un second champ pour un "mot de passe"
-- 3 boutons :
-      - bouton "connexion" pour vérifier les informations
-      - bouton "Créer un compte" ouvrir une fenêtre d'inscription
-      - bouton "Reset" qui vide tous les champs du formulaire
+- 3 boutons : un bouton "connexion" pour vérifier les informations, un bouton "Créer un compte" ouvrir une fenêtre d'inscription et unbouton "Reset" qui vide tous les champs du formulaire
 
 Fenêtre d'inscription avec :
 - Un premier champ pour un "Identifiant"
 - Un second champ pour un "mot de passe"
 - Un troisième champ pour la confirmation du mot de passe
-- 2 boutons :
-      - bouton "créer le compte" pour créer un profils identifiant/mot de passe une fois tout les champs correctement remplie
-      - bouton "retour" pour fermer la fenêtre d'inscription 
+- 2 boutons : un bouton "créer le compte" pour créer un profils identifiant/mot de passe une fois tout les champs correctement remplie et un bouton "retour" pour fermer la fenêtre d'inscription 
 
 Gestion de base de données avec SQLite
 - Création d'un fichier data_user.db même répertoire que le code source
-- Le fichier contient une table "users" avec les colonnes suivantes :
-      - "id" : Identifiant unique
-      - "username" : Identifiant choisie par l'utilisateur
-      - "password_hash" : Mot de passe choisie par l'utilisateur haché en SHA-256
+- Le fichier contient une table "users" avec les colonnes suivantes : "id" un identifiant unique, "username" l'identifiant choisie par l'utilisateur et "password_hash" le mot de passe choisie par l'utilisateur haché en SHA-256
 
 --Sécurité--
 - Les mots de passe sont hachés avec bcrypt
