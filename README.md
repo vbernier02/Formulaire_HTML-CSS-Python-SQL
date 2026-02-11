@@ -26,14 +26,18 @@ Le projet met en œuvre :
 ### Dépendances Python
 
 - `sqlite3`
+- `Flask`
 - `bcrypt`
 - `os`
 - `re`
 
-Installation de bcrypt si nécessaire :
+Installation si nécessaire :
 
 ```bash
 pip install bcrypt
+```
+```bash
+pip install Flask
 ```
 
 ---
